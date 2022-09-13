@@ -1,0 +1,45 @@
+{
+  "name": "github-issue-widget",
+  "repository": "git://github.com/JonathanSchndr/github-issue-widget.git",
+  "version": "0.0.1",
+  "description": "GitHub Issue Widget bring your issue tracking to your website.",
+  "files": [
+    "dist",
+    "example"
+  ],
+  "main": "./dist/github-issue-widget.umd.js",
+  "types": "./dist/github-issue-widget.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/github-issue-widget.mjs",
+      "require": "./dist/github-issue-widget.js"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    }
+  },
+  "scripts": {
+    "dev": "vite & vite build --watch",
+    "serve": "vite",
+    "build": "vite build"
+  },
+  "author": "Jonathan Schneider",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JonathanSchndr/github-issue-widget/issues"
+  },
+  "homepage": "https://github.com/JonathanSchndr/github-issue-widget#readme",
+  "dependencies": {
+    "@primer/css": "^20.4.5",
+    "github-form-schema-html": "^1.0.6"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.18.9",
+    "eslint": "^8.23.1",
+    "typescript": "^4.8.3",
+    "vite": "^3.1.0",
+    "vite-plugin-dts": "^1.5.0",
+    "vite-plugin-mkcert": "^1.9.0"
+  }
+}
