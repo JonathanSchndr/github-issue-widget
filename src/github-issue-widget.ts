@@ -10,6 +10,7 @@ export class GitHubIssueWidget {
   constructor(options: Options) {
     this.options = options;
 
+    this.options.owner = this.options.owner ?? ''
     this.options.repository = this.options.repository ?? ''
     this.options.branch = this.options.branch ?? ''
     this.options.issueSchemaPath = this.options.issueSchemaPath ?? ''
@@ -39,7 +40,7 @@ export class GitHubIssueWidget {
 
     htmlExport += `<div class="box-body">`;
     htmlExport += `<p class="color-fg-muted">${this.options.boxDescription}</p>`;
-    htmlExport += `<a href="https://github.com/${this.options.repository}/tree/${this.options.branch}" class="branch-name">${this.options.repository}</a>`;
+    htmlExport += `<a href="https://github.com/${this.options.owner}/${this.options.repository}/tree/${this.options.branch}" class="branch-name">${this.options.owner}/${this.options.repository}</a>`;
     htmlExport += `</div>`;
 
     htmlExport += `<div class="box-footer">`;
@@ -53,7 +54,7 @@ export class GitHubIssueWidget {
 
   isLoggedIn() {
     if(this.getCode()) {
-      fetch(this.options.appTokenPath, {
+      fetch(this.options.appTokenPath, { // TODO: CORS ERROR / NOT SUPPORTED
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ client_id: this.options.appClientId, client_secret: this.options.appClientSecret, code: this.getCode() }),

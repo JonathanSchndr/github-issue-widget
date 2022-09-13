@@ -1,4 +1,5 @@
 export interface Options {
+  owner: string;
   repository: string;
   branch: string;
   issueSchemaPath: string;

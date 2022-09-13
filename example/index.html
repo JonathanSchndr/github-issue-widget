@@ -316,11 +316,12 @@
 
     document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('widget').innerHTML = new GitHubIssueWidget({
-        repository: 'directus/directus',
+        owner: 'JonathanSchndr',
+        repository: 'github-issue-widget',
         branch: 'main',
         issueSchemaPath: '.github/ISSUE_TEMPLATE/bug_report.yml',
-        appClientId: '06c01372af779e267d38',
-        appClientSecret: '4b8b11f2a942a27922cd1b61f59fc3b96c7750f5',
+        appClientId: '',
+        appClientSecret: '',
       }).render();
     })
   </script>

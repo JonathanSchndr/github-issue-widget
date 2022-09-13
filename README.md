@@ -1,5 +1,14 @@
 > Currently work in progress! Please do not use productively.
 
+# TODO 1.0
+
+* Receive Token (CORS PROBLEM)
+* Check Cookie, if User already logedin
+* Integrate Oktokit.js
+* Integrate GitHub Form Schema HTML
+* Submit Issue
+* Define Readme
+
 # GitHub Issue Widget
 
 [![npm version][npm-version-src]][npm-version-href]
