@@ -1,7 +1,5 @@
 > Currently work in progress! Please do not use productively.
 
-# TODO 1.0
-
 * Receive Token (CORS PROBLEM)
 * Check Cookie, if User already logedin
 * Integrate Oktokit.js
@@ -18,7 +16,7 @@
 > GitHub Issue Widget for your Website
 
 - [✨ &nbsp;Release Notes](https://github.com/JonathanSchndr/github-issue-widget/releases)
-- [🔴 Demo](https://codesandbox.io/s/example-github-issue-widget-7khslb)
+- [🔴 Demo](#)
 
 ## Features
 
@@ -37,20 +35,32 @@ npm i github-issue-widget # npm
 ```
 
 1. Create your own GitHub OAuth App (https://github.com/settings/developers)
-   1. Application name: name of the website
-   2. Homepage URL: url of the page in which the widget was integrated
-   3. Authorization callback URL: url of the page in which the widget was integrated
+   1. Application name: name of the website (Issue Widget (Example))
+   2. Homepage URL: url of the page in which the widget was integrated (https://127.0.0.1:5173)
+   3. Authorization callback URL: url of the page in which the widget was integrated (https://127.0.0.1:5173/example/index.html)
 2. Generate a new client secret
 3. Copy client id and client secret
 
 ## Basic usage
 
 ```html
-
+<div id="widget"></div>
 ```
 
 ```javascript
+import 'github-issue-widget/dist/style.css';
+import { GitHubIssueWidget } from 'github-issue-widget';
 
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('widget').innerHTML = new GitHubIssueWidget({
+    owner: 'JonathanSchndr',
+    repository: 'github-issue-widget',
+    branch: 'main',
+    issueSchemaPath: '.github/ISSUE_TEMPLATE/bug_report.yml',
+    appClientId: '',
+    appClientSecret: '',
+  }).render();
+})
 ```
 
 ## Development
